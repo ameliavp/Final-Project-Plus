@@ -1,0 +1,50 @@
+h1 {
+  text-align: center;
+  color: rgb(54, 171, 248);
+  margin: 30px;
+  text-shadow: 2px 2px 4px #1743bb;
+}
+h2 {
+  color: rgb(83, 160, 241);
+  text-align: center;
+  font-size: 36px;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.search-button {
+  padding: 2.5px 36px;
+  background-color: rgb(222, 245, 252);
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid rgb(145, 194, 235);
+}
+.search-button:hover {
+  background-color: rgb(178, 213, 235);
+  color: white;
+}
+.sunny1 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+}
+.temperature1 {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(83, 160, 241);
+}
+li {
+  list-style: none;
+  padding-left: 110px;
+  padding-right: 90px;
+  text-transform: capitalize;
+}
+.card-text {
+  padding-left: 20px;
+}
