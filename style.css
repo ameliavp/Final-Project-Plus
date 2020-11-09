@@ -41,9 +41,10 @@ body {
 }
 li {
   list-style: none;
-  padding-left: 110px;
+  padding-left: 100px;
   padding-right: 90px;
   text-transform: capitalize;
+  display: inline-block;
 }
 .card-text {
   padding-left: 20px;
