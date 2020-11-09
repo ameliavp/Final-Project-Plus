@@ -3,7 +3,7 @@ function showWeather(response) {
   let city = document.querySelector("#city-input");
   let icon.innerHTML = document.querySelector("#icon");
   document.querySelector("#city-input").innerHTML = response.data.name;
-  document.querySelector(".temperature1").innerHTML = Math.round(
+  document.querySelector("#temperature1").innerHTML = Math.round(
     response.data.main.temp
   );
   date.innerHTML = formatDate(response.data.dt * 1000);
@@ -11,23 +11,16 @@ function showWeather(response) {
   document.querySelector("#icon").setAttribute("alt", response.data.weather[0].icon);
 }
 
-function search(city){
-let apiKey = "b9513445dda79c1ce65da05cdc1677c0";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(showWeather);
-}
-
-function submit(event) {
-    event.preventDefault();
-    let city = document.querySelector("#city-input");
-    search(city.value);
-    console.log(city.value);
-}
-
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   let days = [
     "Sunday",
     "Monday",
@@ -39,6 +32,18 @@ function formatDate(timestamp) {
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
+}
+
+function searchCity(city){
+let apiKey = "b9513445dda79c1ce65da05cdc1677c0";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(showWeather);
+}
+
+function form(event) {
+    event.preventDefault();
+    let city = document.querySelector("#city-input").value;
+    searchCity(city.value);
 }
 
  let form = document.querySelector("#search-form");
