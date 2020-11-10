@@ -1,14 +1,21 @@
 function showWeather(response) {
   let temperature = document.querySelector("temperature1");
   let city = document.querySelector("#city-input");
-  let icon.innerHTML = document.querySelector("#icon");
+  let icon = document.querySelector("#icon");
   document.querySelector("#city-input").innerHTML = response.data.name;
-  document.querySelector("#temperature1").innerHTML = Math.round(
+  document.querySelector(".temperature1").innerHTML = Math.round(
     response.data.main.temp
   );
   date.innerHTML = formatDate(response.data.dt * 1000);
-  document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  document.querySelector("#icon").setAttribute("alt", response.data.weather[0].icon);
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].icon);
 }
 
 function formatDate(timestamp) {
@@ -34,20 +41,20 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function searchCity(city){
-let apiKey = "b9513445dda79c1ce65da05cdc1677c0";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(showWeather);
+function searchCity(city) {
+  let apiKey = "b9513445dda79c1ce65da05cdc1677c0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
 }
 
-function form(event) {
-    event.preventDefault();
-    let city = document.querySelector("#city-input").value;
-    searchCity(city.value);
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);
 }
 
- let form = document.querySelector("#search-form");
- form.addEventListener("submit", submit);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 function displayFahrenheit(event) {
   event.preventDefault();
