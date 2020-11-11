@@ -1,9 +1,6 @@
 function showWeather(response) {
-  let temperature = document.querySelector("temperature1");
-  let city = document.querySelector("#city-input");
-  let icon = document.querySelector("#icon");
-  document.querySelector("#city-input").innerHTML = response.data.name;
-  document.querySelector(".temperature1").innerHTML = Math.round(
+  document.querySelector("#weather-location").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
   date.innerHTML = formatDate(response.data.dt * 1000);
@@ -80,3 +77,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
+
+searchCity("Lisbon");

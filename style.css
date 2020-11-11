@@ -49,3 +49,7 @@ li {
 .card-text {
   padding-left: 20px;
 }
+
+#date {
+  color: green;
+}
