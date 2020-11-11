@@ -3,11 +3,13 @@ h1 {
   color: rgb(54, 171, 248);
   margin: 30px;
   text-shadow: 2px 2px 4px #1743bb;
+  font-size: 40px;
 }
 h2 {
-  color: rgb(83, 160, 241);
+  color: rgb(54, 161, 248);
   text-align: center;
   font-size: 36px;
+  text-shadow: 2px 2px 4px #f8e1d7;
 }
 body {
   font-family: "Ubuntu", sans-serif;
@@ -37,7 +39,7 @@ body {
   margin: 0 auto;
   text-align: center;
   font-size: 30px;
-  color: rgb(83, 160, 241);
+  color: rgb(54, 138, 248);
 }
 li {
   list-style: none;
@@ -51,5 +53,5 @@ li {
 }
 
 #date {
-  color: green;
+  color: rgb(54, 138, 248);
 }
